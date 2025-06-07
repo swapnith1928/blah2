@@ -256,7 +256,7 @@ def main():
         degraded_image = postprocess_image(degraded_display)
 
         # Load model
-        checkpoint_path = "generator_epoch_25.pth"
+        checkpoint_path = os.path.join(os.path.dirname(_file_), "generator_epoch_10.pth")
         model, device = load_model(checkpoint_path)
         if model is None:
             return
