@@ -168,7 +168,7 @@ def load_model(checkpoint_path):
         st.error(f"Checkpoint '{checkpoint_path}' not found. Please ensure it exists in the app directory.")
         return None, device
     except RuntimeError as e:
-        st.error(f"Error loading model: {e}. Ensure 'generator_epoch_25.pth' matches the Generator architecture.")
+        st.error(f"Error loading model: {e}. Ensure 'generator_epoch_10.pth' matches the Generator architecture.")
         return None, device
     model.eval()
     return model, device
