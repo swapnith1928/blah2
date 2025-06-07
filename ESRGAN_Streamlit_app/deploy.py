@@ -201,7 +201,7 @@ def simulate_degradation(image):
 # Preprocess image
 def preprocess_image(image):
     transform = transforms.Compose([
-        transforms.Resize((32, 32)),
+        transforms.Resize((256, 256)),
         transforms.ToTensor(),  # [0, 1]
     ])
     return transform(image).unsqueeze(0)  # [1, 3, 256, 256]
