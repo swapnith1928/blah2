@@ -252,7 +252,7 @@ def main():
         # Simulate degradation
         degraded_tensor = simulate_degradation(input_tensor)
         # Resize degraded for display only
-        degraded_display = F.resize(degraded_tensor, (256, 256), interpolation=transforms.InterpolationMode.BICUBIC)
+        degraded_display = F.resize(degraded_tensor, (32, 32), interpolation=transforms.InterpolationMode.BICUBIC)
         degraded_image = postprocess_image(degraded_display)
 
         # Load model
