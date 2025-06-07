@@ -201,7 +201,7 @@ def simulate_degradation(image):
 # Preprocess image
 def preprocess_image(image):
     transform = transforms.Compose([
-        transforms.Resize((256, 256)),
+        transforms.Resize((32, 32)),
         transforms.ToTensor(),  # [0, 1]
     ])
     return transform(image).unsqueeze(0)  # [1, 3, 256, 256]
@@ -252,7 +252,7 @@ def main():
         # Simulate degradation
         degraded_tensor = simulate_degradation(input_tensor)
         # Resize degraded for display only
-        degraded_display = F.resize(degraded_tensor, (32, 32), interpolation=transforms.InterpolationMode.BICUBIC)
+        degraded_display = F.resize(degraded_tensor, (256, 256), interpolation=transforms.InterpolationMode.BICUBIC)
         degraded_image = postprocess_image(degraded_display)
 
         # Load model
